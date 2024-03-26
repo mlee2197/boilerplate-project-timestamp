@@ -24,7 +24,7 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
-app.get("/api/:date", function (req, res) {
+app.get("/api/:date?", function (req, res) {
   const { date } = req.params;
   const dateObj = date ? !isNaN(date) ? new Date(parseInt(date)) : new Date(date) : new Date();
   if (isNaN(dateObj.getTime())) {
